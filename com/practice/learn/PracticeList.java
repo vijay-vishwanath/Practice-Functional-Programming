@@ -20,5 +20,27 @@ public class PracticeList {
         // In Java 9 onwards
         List arrayList = List.of(4,5,6,3,2,1,45,21,63);
         arrayList.forEach(n -> System.out.println(n));
+
+        //This is how we print the list in structured way
+        printStructured(arrList);
+
+        //This is how we print in function programming way
+        printFunctional(arrayList);
+    }
+
+    public static void printStructured(List<Integer> list){
+        for(Integer number : list){
+            System.out.println(number);
+        }
+    }
+
+    public static void print(int number){
+        System.out.println(number);
+    }
+
+    public static void printFunctional(List<Integer> list){
+        //Here we are calling the stream of integers from the list using method reference by using class name
+        //we are calling print method to print the stream of Integers
+        list.stream().forEach(PracticeList::print);
     }
 }
