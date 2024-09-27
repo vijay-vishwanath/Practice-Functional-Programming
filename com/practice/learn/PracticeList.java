@@ -42,5 +42,7 @@ public class PracticeList {
         //Here we are calling the stream of integers from the list using method reference by using class name
         //we are calling print method to print the stream of Integers
         list.stream().forEach(PracticeList::print);
+                  //or
+        list.stream().forEach(System.out::println);
     }
 }
