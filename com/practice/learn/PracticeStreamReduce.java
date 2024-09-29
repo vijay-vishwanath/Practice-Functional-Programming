@@ -35,11 +35,11 @@ public class PracticeStreamReduce{
           //return list.stream().reduce(0,PracticeStreamReduce::sum);
                                //or
            return list.stream().reduce(0, (a,b) -> a+b);
-           //Lets understand something here. Here a -> is called aggreate and b -> next value
+           //Lets understand something here. Here a -> is called aggreate value(or returned value of nth iteration) and b -> next value
            //0 is the initial value assigned to a and next value(which is the first value in the list) gets added to a
            //a:0 + b:3 -> a:3 + b:2 -> a:5 + b:1 -> a:6 + b:45 -> a:51 + b:32 and so on.
            //Viola this is how the reduce function works
-           //*********We can also use built in function (reduce(0, Integer::sum)) instead of lambda expression.
+           //*********We can also use built-in function (reduce(0, Integer::sum)) instead of lambda expression.
     }
 
 }
