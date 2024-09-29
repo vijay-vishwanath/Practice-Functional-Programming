@@ -27,6 +27,9 @@ public class PractiveFP {
         list.stream()
                 .filter(PractiveFP::isEven)   //Filter - only Allows even number, and it returns a stream
                 .forEach(System.out::println);
+
+             //or
+        list.stream().filter(n -> n%2==0).forEach(System.out::println);
     }
 
 }
