@@ -8,6 +8,13 @@ public class PracticeStreamReduce{
         System.out.println(traditionalSum(list));
         System.out.println("______________________");
         System.out.println(functionalSum(list));
+        System.out.println("______________________");
+        System.out.println(sumOfSquaresInList(list));
+        System.out.println("______________________");
+        System.out.println(sumOfCubesInList(list));
+        System.out.println("______________________");
+        System.out.println(sumOfOddNumbersInList(list));
+
     }
     //Traditional way to add the number
     public static int traditionalSum(List<Integer> list){
@@ -40,6 +47,20 @@ public class PracticeStreamReduce{
            //a:0 + b:3 -> a:3 + b:2 -> a:5 + b:1 -> a:6 + b:45 -> a:51 + b:32 and so on.
            //Viola this is how the reduce function works
            //*********We can also use built-in function (reduce(0, Integer::sum)) instead of lambda expression.
+    }
+
+    //EG 1 - Square every number in a list and find the sum of the squares
+    public static int sumOfSquaresInList(List<Integer> list){
+        return list.stream().map(n -> n*n).reduce(0, (a,b)->a+b);
+    }
+
+    //EG 2 - Cube every number in a list and find the sum of the cubes
+    public static int sumOfCubesInList(List<Integer> list){
+        return list.stream().map(n -> n*n*n).reduce(0, (a,b)->a+b);
+    }
+    //EG 3 - Find sum of all the odd numbers in the list
+    public static int sumOfOddNumbersInList(List<Integer> list){
+        return list.stream().filter(n -> n%2==1).reduce(0, Integer::sum);
     }
 
 }

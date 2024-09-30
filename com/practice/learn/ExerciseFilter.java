@@ -1,9 +1,8 @@
 package com.practice.learn;
 
 import java.util.List;
-import java.util.stream.Stream;
 
-public class Exercise {
+public class ExerciseFilter {
     public static void main(String[] args) {
         List<Integer> numbers = List.of(2, 5, 6,3, 12, 51, 90, 87, 66, 34, 27, 13);
        List<String> courses = List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernetes");
