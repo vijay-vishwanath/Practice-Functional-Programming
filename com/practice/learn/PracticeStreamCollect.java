@@ -27,4 +27,8 @@ public class PracticeStreamCollect {
     public static List<Integer> coursesLength(List<String> list){
         return list.stream().map(n -> n.length()).collect(Collectors.toList());
     }
+
+    //Here an important note to consider
+    //The function which returns a stream are called intermediate operations - eg. filter, map, sorted, distinct, etc...
+    //The function which returns a type like void, int, list , etc.. are called terminal operations - eg. reduce, forEach, collect, etc...
 }
