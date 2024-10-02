@@ -65,6 +65,7 @@ public class PracticeDifferentWaystoCreateStream {
         System.out.println(LongStream.rangeClosed(1,20).reduce(1, (a, b) -> a*b));
         //2432902008176640000 - In such case we can use long stream but even long stream cannot give the
         //value of 50! so In such case we have to use bigIntegers
+        //So for Huge operations we can create a BigInteger object and perform the operations
         System.out.println(LongStream.rangeClosed(1,50).mapToObj(BigInteger::valueOf).reduce(BigInteger.ONE, BigInteger::multiply));
         //30414093201713378043612608166064768844377641568960512000000000000 - output
         //So here we are using mapToObj() function to map it to BigInteger Object, and then we are calling the valueOf to return a
