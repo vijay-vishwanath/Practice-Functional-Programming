@@ -2,6 +2,7 @@ package com.practice.learn;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class PracticeGroupingCourses {
@@ -59,6 +60,18 @@ public class PracticeGroupingCourses {
         //{Cloud=Azure, FullStack=FullStack, Microservices=API, Framework=Spring}
         //and if we want to convert this into a list we have to add ..values().stream().collect(Collectors.toList());
         //This line will Extract the values (course names) from the Map and prints only the values in the list.
+
+        Map<String, String> highestReviewedCoursesMap = courses.stream().collect(Collectors.groupingBy(
+                PracticeCourses::getCategory,
+                Collectors.collectingAndThen(
+                        Collectors.maxBy(Comparator.comparing(PracticeCourses::getReviewScore)),
+                        course -> course.map(PracticeCourses::getName).orElse("")
+                )
+        ));
+        System.out.println(highestReviewedCoursesMap);
+        //{Cloud=Azure, FullStack=FullStack, Microservices=API, Framework=Spring}
+        //We can also store the result in a hashmap if we want
+
 
 
 
