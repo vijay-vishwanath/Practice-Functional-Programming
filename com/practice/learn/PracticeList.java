@@ -20,11 +20,12 @@ public class PracticeList {
         // In Java 9 onwards
         List arrayList = List.of(4,5,6,3,2,1,45,21,63);
         arrayList.forEach(n -> System.out.println(n));
+        //But this will produce a immutable arrayList
 
         //This is how we print the list in structured way
         printStructured(arrList);
 
-        //This is how we print in function programming way
+        //This is how we print in functional programming way
         printFunctional(arrayList);
     }
 
@@ -45,4 +46,34 @@ public class PracticeList {
                   //or
         list.stream().forEach(System.out::println);
     }
+    // Terminal Operations:
+    //Terminal operations are the final operations performed on a stream, producing a result or side effect. They:
+    //- Consume the stream
+    //- Produce a result or side effect
+    //- Cannot be reused
+    //Examples of terminal operations:
+    //- forEach()
+    //- collect()
+    //- reduce()
+    //- findFirst()
+    //- findAny()
+    //- min()
+    //- max()
+    //- count()
+    //- sum()
+    //- average()
+
+    //2. Intermediate Operations:
+    //Intermediate operations transform or filter the stream, returning a new stream. They:
+    //- Do not consume the stream
+    //- Return a new stream
+    //- Can be chained
+    //Examples of intermediate operations:
+    //- filter()
+    //- map()
+    //- flatMap()
+    //- distinct()
+    //- sorted()
+    //- limit()
+    //- skip()
 }
